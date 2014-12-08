@@ -17,9 +17,24 @@ ActiveRecord::Schema.define(version: 20141207172131) do
   enable_extension "plpgsql"
 
   create_table "projects", force: true do |t|
+    t.string   "name",       null: false
+    t.string   "desc"
+    t.integer  "owner_id",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
+  add_index "projects", ["owner_id"], name: "index_projects_on_owner_id", using: :btree
+
   create_table "tasks", force: true do |t|
+    t.string   "desc",                         null: false
+    t.date     "due_date"
+    t.integer  "priority"
+    t.boolean  "completed",    default: false, null: false
+    t.integer  "project_id",                   null: false
+    t.integer  "task_list_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
@@ -29,5 +44,7 @@ ActiveRecord::Schema.define(version: 20141207172131) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
 end
