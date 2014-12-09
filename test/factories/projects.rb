@@ -2,5 +2,8 @@
 
 FactoryGirl.define do
   factory :project do
+    name "test_project"
+    desc "a test project"
+    user1
   end
 end
