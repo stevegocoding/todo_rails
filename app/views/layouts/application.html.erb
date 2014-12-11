@@ -8,7 +8,54 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to site_name, site_url, :class => "navbar-brand" %>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav pull-right">
+        <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
+        <li class="<%= 'active' if current_page?(about_path) %>"><%= link_to "About", about_path %></li>
+        <li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to "Contact", contact_path %></li>
+      </ul>
+    </div><!-- /.nav-collapse -->
+  </div><!-- /.container -->
+</div><!-- /.navbar -->
+
+<% if current_page?(root_path) %>
+  <% if content_for?(:jumbotron) %>
+    <div class="jumbotron">
+      <div class="container">
+        <%= yield :jumbotron %>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <div class="container">
+<% end %>
+  <%= yield %>
+    <footer>
+      <hr>
+      <p class="pull-right">
+      <%= link_to '<span class="glyphicon-class glyphicon glyphicon-chevron-up"></span> Back to top'.html_safe, '#Top' %>
+      </p>
+      <p>
+      &copy; <%= Time.now.year %> <%= site_name %> 
+    &bull;
+    <%= link_to "Privacy", privacy_path %></li>
+  &bull;
+  <%= link_to "Terms", terms_path %></li>
+      </p>
+    </footer>
+  </div> <!-- /container -->
+
 
 </body>
 </html>

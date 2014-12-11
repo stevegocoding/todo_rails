@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  root to: "home#index"
   
-  get 'home/index'
-
-  get 'users/create'
+  get "about", to: "home#index", as: "about"
+  get "contact", to: "home#index", as: "contact"
+  get "privacy", to: "home#index", as: "privacy"
+  get "term", to: "home#index", as: "terms"
 
   resources :users, only: [:create]
   
