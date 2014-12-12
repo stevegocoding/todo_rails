@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20141207172131) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "name"
+    t.string   "username"
     t.string   "email"
     t.string   "password_digest"
     t.datetime "created_at"
@@ -46,5 +46,6 @@ ActiveRecord::Schema.define(version: 20141207172131) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", using: :btree
 
 end
