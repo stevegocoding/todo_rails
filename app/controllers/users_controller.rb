@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       puts "Save Successfully"
-      redirect_back_or_default root_url 
+      redirect_back_or root_url 
     else
       puts "Save not success"
       render :new

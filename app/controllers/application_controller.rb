@@ -3,8 +3,9 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   
-  def redirect_back_or_default(default)
-    redirect_to(session.delete(:return_to) || default)
+  def redirect_back_or(default)
+    redirect_to(session[:return_to] || default)
+    session.delete(:return_to)
   end
   
   def store_location(path)
