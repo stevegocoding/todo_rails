@@ -12,6 +12,9 @@
  *
  */
 
+@import "font-awesome-sass/assets/stylesheets/font-awesome-sprockets";
+@import "font-awesome-sass/assets/stylesheets/font-awesome";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import "bootstrap_override"
 

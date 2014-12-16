@@ -1,0 +1,14 @@
+{
+  "name": "font-awesome-sass",
+  "homepage": "https://github.com/FortAwesome/font-awesome-sass",
+  "version": "4.2.2",
+  "_release": "4.2.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "4.2.2",
+    "commit": "26542ff0f4fcf70fa0b6405b3f5ff368fc37175e"
+  },
+  "_source": "git://github.com/FortAwesome/font-awesome-sass.git",
+  "_target": "*",
+  "_originalSource": "git://github.com/FortAwesome/font-awesome-sass"
+}
