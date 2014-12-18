@@ -13,3 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sass-official/assets/javascripts/bootstrap-sprockets
+
+$(document).on('ajax:success', '#signin-form', function(evt, data, status, xhr) {
+  if (data["signin_error"]) {
+    alert(data["signin_error"]);
+  }
+  else {
+    alert("haha");
+  }
+});

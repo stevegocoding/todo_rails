@@ -41,35 +41,24 @@
 <% else %>
   <div class="container">
 <% end %>
+
   <%= yield %>
   
-  <div class="modal fade" id="signin-modal" title="Sign in">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button>
-          <h4 class="modal-title">Sign In</h4>
-        </div>
-        <div class="modal-body signin-form"></div>
-      </div>
-    </div>
-  </div>
-
-    <footer>
-      <hr>
-      <p class="pull-right">
-      <%= link_to '<span class="glyphicon-class glyphicon glyphicon-chevron-up"></span> Back to top'.html_safe, '#Top' %>
-      </p>
-      <p>
-      &copy; <%= Time.now.year %> <%= site_name %> 
-    &bull;
-    <%= link_to "Privacy", privacy_path %></li>
+  <footer>
+    <hr>
+    <p class="pull-right">
+    <%= link_to '<span class="glyphicon-class glyphicon glyphicon-chevron-up"></span> Back to top'.html_safe, '#Top' %>
+    </p>
+    <p>
+    &copy; <%= Time.now.year %> <%= site_name %> 
   &bull;
-  <%= link_to "Terms", terms_path %></li>
-      </p>
-    </footer>
+  <%= link_to "Privacy", privacy_path %></li>
+&bull;
+<%= link_to "Terms", terms_path %></li>
+    </p>
+  </footer>
   </div> <!-- /container -->
 
-
+  <%= render 'shared/form_modal', modal_id: 'signin-modal', form_id: 'signin-form' %>
 </body>
 </html>
