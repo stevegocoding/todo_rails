@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
     store_location params[:return_to]
     respond_to do |format|
       format.html
-      format.js 
     end
   end
   
@@ -15,25 +14,29 @@ class SessionsController < ApplicationController
               User.where('lower(username) = lower(?)', login).first
             end
     
-    respond_to do |format|
       if @user && @user.authenticate(signin_params[:password])
-        login_as @user
+        # login_as @user
         remember_me if params[:remember_me]
-
-        format.html { redirect_back_or root_url }
-        format.js
+        
+        redirect_to root_url(signed_in: true)
+        
       else
         error_msg = 'Incorrect user name or password'
-        puts error_msg
-        flash.now[:warning] = 'Incorrect user name or password'
-        format.json { render json: {signin_error: error_msg} }
+        flash.now[:warning] = error_msg
+        
+        format.json { 
+          render json: { sigggnin_error: error_msg }, status: 422
+        }
       end
-    end
   end
   
   private
   
   def signin_params
     params.require(:user).permit(:email, :password)
+  end
+  
+  def check_layout
+    
   end
 end

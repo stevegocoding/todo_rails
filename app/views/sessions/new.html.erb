@@ -1,0 +1,33 @@
+<div class="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="panel">
+          <div class="panel-heading">
+            <h3 class="panel-title">Sign in</h3>
+          </div>
+          <div class="panel-body">
+            <%= form_for :user, url: signin_path, html: {class: "form-horizontal", role: "form"} do |f| %>
+
+              <div class="form-group icon-addon addon-md">
+                <%= f.text_field :email, class: "form-control", placeholder: 'E-mail' %> 
+                <label for="email" class="fa fa-envelope-o fa-fw" rel="tooltip" title="email"></label>
+              </div>
+
+              <div class="form-group icon-addon addon-md">
+                <%= f.password_field :password, class: "form-control", placeholder: 'Password' %>
+                <label for="email" class="fa fa-key fa-fw" rel="tooltip" title="password"></label>
+              </div>
+
+              <div class="form-group"> 
+                <%= f.button raw("<i class='fa fa-user fa-fw'></i>Sign in"), class: "btn btn-large btn-primary" %>
+              </div> 
+            <% end %>
+            <hr>
+            <a href="#">Forgot password?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

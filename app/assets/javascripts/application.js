@@ -10,15 +10,18 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
+//= require jquery/dist/jquery.min
+//= require jquery-validation/dist/jquery.validate.min
+//= require jquery-ui/jquery-ui.min
 //= require bootstrap-sass-official/assets/javascripts/bootstrap-sprockets
 
-$(document).on('ajax:success', '#signin-form', function(evt, data, status, xhr) {
-  if (data["signin_error"]) {
-    alert(data["signin_error"]);
-  }
-  else {
-    alert("haha");
-  }
-});
+App = {};
+
+(function($, window, document) {
+  $(function() {
+    // DOM is ready! 
+    $(".sidebar-tabs").tabs({
+      active: 1
+    });
+  });
+}(window.jQuery, window, document));

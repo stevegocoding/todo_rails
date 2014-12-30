@@ -1,2 +1,4 @@
 asset 'bootstrap-sass-official'
 asset 'font-awesome-sass', github: "FortAwesome/font-awesome-sass"
+asset 'jquery-ui'
+asset 'jquery-validation', github: "jzaefferer/jquery-validation"

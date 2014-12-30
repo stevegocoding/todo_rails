@@ -2,6 +2,8 @@
   "name": "dsl-generated dependencies",
   "dependencies": {
     "bootstrap-sass-official": "latest",
-    "font-awesome-sass": "git://github.com/FortAwesome/font-awesome-sass"
+    "font-awesome-sass": "git://github.com/FortAwesome/font-awesome-sass",
+    "jquery-ui": "latest",
+    "jquery-validation": "git://github.com/jzaefferer/jquery-validation"
   }
 }

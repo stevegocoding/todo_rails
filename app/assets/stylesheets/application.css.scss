@@ -12,9 +12,97 @@
  *
  */
 
+$font-size-base: 13px; 
+
 @import "font-awesome-sass/assets/stylesheets/font-awesome-sprockets";
 @import "font-awesome-sass/assets/stylesheets/font-awesome";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap";
-@import "bootstrap_override"
+@import "bootstrap_override";
+@import "jquery-ui/themes/smoothness/jquery-ui.min";
+@import "jquery-ui_override";
 
+h3 {
+  margin: 0px;
+  padding: 0px;
+}
+
+html, body {
+  background-color: #eee; 
+  margin: 0px;
+  padding: 0px;
+  min-height: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  max-width: 960px;
+  margin: 0px auto;
+  position: relative; 
+  min-height: 100%;
+  height: auto !important;
+}
+
+.sidebar {
+  position: absolute;
+  left: 0px;
+  width: 250px;
+  height: 100%;
+  padding-left: 25px;
+}
+
+.content {
+  margin-left: 252px;
+  height: 100%;
+  background-color: white;
+}
+
+.sidebar-banner {
+  border-bottom: 1px solid #bdbdbd;
+  width: 90%;
+  height: 40px; 
+  position: relative;
+} 
+
+.sidebar-logo {
+  position: absolute;
+  top: 18%;
+}
+
+#top-filters { 
+  margin: 29px 0 29px 5px;
+  padding: 0;
+}
+
+#top-filters .fa {
+  margin-right: 7px;
+}
+
+#top-filters li {
+  list-style: none; 
+  line-height: 26px;
+  margin-bottom: 8px;
+  padding: 3px, 0;
+  cursor: pointer;
+  color: #737373;
+}
+
+#top-filters li:hover {
+  background-color: #fafafa;  
+}
+
+#sidebar-tabs {
+  padding-bottom: 3px;
+}
+
+.sidebar-projects-actions {
+  margin-left: 10px;
+}
+
+.sidebar-projects-actions .add-project .fa {
+  margin-right: 8px;
+}
+
+.sidebar-projects-actions .add-project a {
+  color: #dd4b39
+}
