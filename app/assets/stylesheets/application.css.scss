@@ -134,8 +134,12 @@ html, body {
 
 .content #top-icons  {
   position: absolute;
-  top: 30%;
+  top: 32%;
   right: 0px;
+}
+
+.content #top-icons a {
+  text-decoration: none;
 }
 
 .content #top-icons .top-icon {
