@@ -1,0 +1,28 @@
+.content-top-bar {
+  @extend %center;
+  @include position(relative, 0);
+  @include size(95% $content-topbar-height);
+  @include margin(0 null 30px auto);
+  @include padding(9px); 
+  
+  .top-search-bar {
+    @include position(absolute, 0px null 0px 0px); 
+    @include size(200px null);
+
+    .search-icon {
+      @include inline-icon(null 10px null null);
+    }
+  }
+
+  .top-icons {
+    @include position(absolute, 32% 0px null null);
+    .top-icon {
+      @include inline_icon(null 40px null null);
+    }
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+

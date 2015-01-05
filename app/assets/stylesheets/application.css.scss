@@ -1,148 +1,23 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- */
+/** Base and Variables */ 
+@import "base/base";
+@import "base/variables";
 
-$font-size-base: 13px; 
+/** Utilities */
+@import "helpers/utils";
+@import "helpers/font_awesome";
 
+/** Vendors */
 @import "font-awesome-sass/assets/stylesheets/font-awesome-sprockets";
 @import "font-awesome-sass/assets/stylesheets/font-awesome";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets";
-@import "bootstrap-sass-official/assets/stylesheets/bootstrap";
-@import "bootstrap_override";
+//@import "bootstrap-sass-official/assets/stylesheets/bootstrap";
 @import "jquery-ui/themes/smoothness/jquery-ui.min";
-@import "jquery-ui_override";
+// @import "vendors/bootstrap_overrides";
+@import "vendors/jquery-ui_overrides";
 
-h3 {
-  margin: 0px;
-  padding: 0px;
-}
+/** Layout */ 
+@import "layout/wrapper";
 
-html, body {
-  background-color: #eee; 
-  margin: 0px;
-  padding: 0px;
-  min-height: 100%;
-  height: 100%;
-}
-
-.wrapper {
-  max-width: 960px;
-  margin: 0px auto;
-  position: relative; 
-  min-height: 100%;
-  height: auto !important;
-}
-
-.sidebar {
-  position: absolute;
-  left: 0px;
-  width: 250px;
-  height: 100%;
-  padding-left: 25px;
-}
-
-.content {
-  margin-left: 252px;
-  height: 100%;
-  background-color: white;
-}
-
-.sidebar-banner {
-  border-bottom: 1px solid #bdbdbd;
-  width: 90%;
-  height: 40px; 
-  position: relative;
-} 
-
-.sidebar-logo {
-  position: absolute;
-  top: 18%;
-}
-
-#top-filters { 
-  margin: 29px 0 29px 5px;
-  padding: 0;
-}
-
-#top-filters .fa {
-  margin-right: 7px;
-}
-
-#top-filters li {
-  list-style: none; 
-  line-height: 26px;
-  margin-bottom: 8px;
-  padding: 3px, 0;
-  cursor: pointer;
-  color: #737373;
-}
-
-#top-filters li:hover {
-  background-color: #fafafa;  
-}
-
-#sidebar-tabs {
-  padding-bottom: 3px;
-}
-
-.sidebar-projects-actions {
-  margin-left: 10px;
-}
-
-.sidebar-projects-actions .add-project .fa {
-  margin-right: 8px;
-}
-
-.sidebar-projects-actions .add-project a {
-  color: #dd4b39
-}
-
-.content #top-bar {
-  position: relative;
-  top: 0px;
-  padding-top: 9px;
-  margin: 0 auto 30px auto;
-  height: 40px; 
-  width: 95%;
-  border-bottom: 1px solid #bdbdbd;
-  background-color: #fff;
-}
-
-.content #top-search-bar {
-  position: absolute;
-  left: 0px;
-  width: 200px;
-}
-
-.content #top-search-bar #search-icon {
-  margin-right: 10px
-}
-
-.content #top-search-bar form {
-  display: inline;
-}
-
-.content #top-icons  {
-  position: absolute;
-  top: 32%;
-  right: 0px;
-}
-
-.content #top-icons a {
-  text-decoration: none;
-}
-
-.content #top-icons .top-icon {
-  margin-left: 40px; 
-}
-
+/** Modules */
+@import "modules/sidebar";
+@import "modules/content";

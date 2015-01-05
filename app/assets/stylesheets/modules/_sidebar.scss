@@ -1,0 +1,72 @@
+@mixin separator_line($color: #bdbdbd) {
+  border-bottom: 1px solid $color;  
+}
+
+@mixin sidebar-list($margin: null null null null) {
+  @include margin($margin);
+}
+
+@mixin sidebar-list-item($heigh, $margin: null null null null) {
+  @include margin($margin); 
+  
+  list-style: none; 
+  line-height: height; 
+  color: #737373;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: #fafafa;
+  }
+}
+
+.sidebar-banner {
+  @include position(relative); 
+  @include size(225px $sidebar-banner-height);
+  @include separator_line;
+  
+  .sidebar-logo  {
+    @include position(absolute, 7px null null null); 
+  }
+}
+
+.sidebar-logo-icon {
+  @include icon-before($icon-bell, 32px);
+  color: #888;
+  text-decoration: none;
+}
+
+.sidebar-top-section {
+  @include position(relative);
+}
+
+.sidebar-top-filters {
+  @include sidebar-list(29px 0 29px 5px);  
+  .filter {
+    @include sidebar-list-item(26px, 11px 0 11px 0);
+  }
+  .filter-icon {
+    @include inline-icon(null 7px null null);
+  }
+}
+
+.sidebar-tabs-secion {
+  @include padding(null null 3px null); 
+  background: transparent; 
+  border: none;
+}
+
+.sidebar-projects-section {
+   
+}
+
+.sidebar-actions-section {
+  .add-project {
+    @include margin(null null null 10px);
+  }
+  .action-icon {
+    @include inline-icon(null 8px null null);
+  }
+  a {
+    color: #dd4b39
+  }
+}
