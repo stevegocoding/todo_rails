@@ -21,6 +21,11 @@
   }
 }
 
+@mixin icon-before-color($icon, $size: 1em, $padding: 0, $color: #000) {
+  @include icon-before($icon, $size, $padding);
+  color: $color;
+}
+
 $icon-glass: "\f000";
 $icon-music: "\f001";
 $icon-search: "\f002";

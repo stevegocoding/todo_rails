@@ -18,11 +18,12 @@
 
 .sidebar-wrapper {
   @include sider(0px, $sidebar-width); 
-  @include padding(null null null 25px); 
+  @include padding(null 25px null null); 
 }
 
 .content-wrapper {  
   @include margin(null null null $sidebar-width);
+  @include padding(null null null 25px);
   height: 100%;
   background-color: white; 
 }

@@ -20,7 +20,7 @@ App = {};
 (function($, window, document) {
   $(function() {
     // DOM is ready! 
-    $(".sidebar-tabs").tabs({
+    $(".sidebar-tabs-section").tabs({
       active: 1
     });
   });
