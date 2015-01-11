@@ -5,7 +5,8 @@ class CreateTasks < ActiveRecord::Migration
       t.date :due_date
       t.integer :priority
       t.boolean :completed, null: false, default: false
-      t.references :project, null: false
+      t.references :owner, null: false, index: true
+      t.references :project
       t.references :task_list
       
       t.timestamps

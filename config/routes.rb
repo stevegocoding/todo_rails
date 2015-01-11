@@ -2,14 +2,16 @@ Rails.application.routes.draw do
   root to: "home#index"
   
   # get 'signup', to: 'users#new'
-  get 'signup', to: 'users#new'
-  get 'signin', to: 'sessions#new'
-  post 'signin', to: 'sessions#create'
+  get 'signup',   to: 'users#new'
+  get 'signin',   to: 'sessions#new'
+  post 'signin',  to: 'sessions#create'
   
-  get 'about', to: 'home#index', as: 'about'
-  get 'contact', to: 'home#index', as: 'contact'
-  get 'privacy', to: 'home#index', as: 'privacy'
-  get 'term', to: 'home#index', as: 'terms'
+  get 'about',    to: 'home#index', as: 'about'
+  get 'contact',  to: 'home#index', as: 'contact'
+  get 'privacy',  to: 'home#index', as: 'privacy'
+  get 'term',     to: 'home#index', as: 'terms'
+  
+  get 'dashboard', to: 'dashboard#index', as: 'dashboard'
 
   resources :users, only: [:create]
   

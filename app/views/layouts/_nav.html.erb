@@ -1,15 +1,19 @@
-<div class="header-container">
+<div class="nav-container">
 
   <div class="menu-list">
     <ul class="nav nav-pills pull-right">
-      <li><a href="#">Sign Up</a></li>
-      <li><a href="#">Sign In</a></li>
+      <li class="<%= active_if_current(signup_path) %>">
+        <%= link_to 'Sign up', signup_path %>
+      </li>
+      
+      <li class="<%= active_if_current(signin_path) %>">
+        <%= link_to 'Sign in', signin_path %>
+      </li>
     </ul>
   </div>
 
   <div class="brand">
-    <h3>Todo App</h3>
+    <h3><%= link_to('App', root_path) %></h3>
   </div>
 
-  
 </div>

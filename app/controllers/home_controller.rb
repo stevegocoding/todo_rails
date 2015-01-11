@@ -1,8 +1,7 @@
 class HomeController < ApplicationController
   def index
-    puts 'hahahah'
-    if params[:signed_in] 
-      render layout: 'dashboard'
+    if signed_in?
+      redirect_to(dashboard_url);
     end
   end
 end

@@ -1,9 +1,6 @@
 class SessionsController < ApplicationController
   def new
     store_location params[:return_to]
-    respond_to do |format|
-      format.html
-    end
   end
   
   def create
@@ -15,18 +12,13 @@ class SessionsController < ApplicationController
             end
     
       if @user && @user.authenticate(signin_params[:password])
-        # login_as @user
+        signin_as @user
         remember_me if params[:remember_me]
-        
         redirect_to root_url(signed_in: true)
-        
       else
         error_msg = 'Incorrect user name or password'
         flash.now[:warning] = error_msg
-        
-        format.json { 
-          render json: { sigggnin_error: error_msg }, status: 422
-        }
+        render :new
       end
   end
   

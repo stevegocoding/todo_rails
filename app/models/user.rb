@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :projects, foreign_key: :owner_id, dependent: :destroy
+  has_many :tasks, foreign_key: :owner_id, dependent: :destroy
   
   has_secure_password
   validates :username, presence: true

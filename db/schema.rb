@@ -31,11 +31,14 @@ ActiveRecord::Schema.define(version: 20141207172131) do
     t.date     "due_date"
     t.integer  "priority"
     t.boolean  "completed",    default: false, null: false
-    t.integer  "project_id",                   null: false
+    t.integer  "owner_id",                     null: false
+    t.integer  "project_id"
     t.integer  "task_list_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "tasks", ["owner_id"], name: "index_tasks_on_owner_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username"

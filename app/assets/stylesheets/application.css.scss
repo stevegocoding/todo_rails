@@ -10,9 +10,9 @@
 @import "font-awesome-sass/assets/stylesheets/font-awesome-sprockets";
 @import "font-awesome-sass/assets/stylesheets/font-awesome";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap-sprockets";
-//@import "bootstrap-sass-official/assets/stylesheets/bootstrap";
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap";
 @import "jquery-ui/themes/smoothness/jquery-ui.min";
-// @import "vendors/bootstrap_overrides";
+@import "vendors/bootstrap_overrides";
 @import "vendors/jquery-ui_overrides";
 
 /** Layout */ 

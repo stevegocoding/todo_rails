@@ -1,10 +1,10 @@
 .content-top-bar {
   @include position(relative, 0);
-  @include size(95% $content-topbar-height);
+  @include size(95%, $content-topbar-height);
   @include separator_line;
 
   .top-search-bar {
-    @include size(100px null);
+    @include size(100px, null);
     display: inline; 
 
     .task-filter-form {
