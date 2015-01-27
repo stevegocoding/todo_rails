@@ -4,7 +4,7 @@ class DashboardController < ApplicationController
   before_action :signin_required
   
   def index
-    @tasks = current_user.tasks
+    filter = params[:filter_id] || 'inbox'
+    @filtered_tasks = current_user.tasks.send(filter)
   end
-  
 end

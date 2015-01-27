@@ -11,15 +11,19 @@ class SessionsController < ApplicationController
               User.where('lower(username) = lower(?)', login).first
             end
     
+    respond_to do |format| 
       if @user && @user.authenticate(signin_params[:password])
         signin_as @user
         remember_me if params[:remember_me]
-        redirect_to root_url(signed_in: true)
+        format.html { redirect_to dashboard_url }
+        
+        #format.json { render json: {
+        #  location: url_for(controller: 'dashboard', action: 'index')
+        #}}
       else
-        error_msg = 'Incorrect user name or password'
-        flash.now[:warning] = error_msg
-        render :new
+        format.json { render json: {error: 'Invalid username or password'}, status: :unprocessable_entity }
       end
+    end
   end
   
   private

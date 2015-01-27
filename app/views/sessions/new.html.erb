@@ -7,7 +7,7 @@
             <h3 class="panel-title">Sign in</h3>
           </div>
           <div class="panel-body">
-            <%= form_for :user, url: signin_path, html: {class: "form-horizontal", role: "form"} do |f| %>
+            <%= form_for :user, url: signin_path, html: {id: 'signin-form', class: "form-horizontal", role: "form"} do |f| %>
 
               <div class="form-group icon-addon addon-md">
                 <%= f.text_field :email, class: "form-control", placeholder: 'E-mail' %> 

@@ -49,7 +49,7 @@
 
       <div class="sidebar-actions-section">
         <div class="add-project">
-          <span class="action-icon"> <i class="fa fa-plus"></i> </span><a href="#">Add Project</a>
+          <span class="action-icon"> <i class="fa fa-plus"></i> </span><a href="#" id="add-project-btn">Add Project</a>
         </div>
       </div>
     </div>
@@ -66,8 +66,8 @@
         </div>
 
         <div class="top-icons">
-          <a href="#" class="add-task"></a>
-          <a href="#" class="options"></a>
+          <a href="#" id="add-task-btn" class="add-task"></a>
+          <a href="#" id="options-btn" class="options"></a>
         </div>
       </div>
 
@@ -76,6 +76,11 @@
     </div>
   </div> 
   
+  <%= render 'layouts/add_task_modal' %>
+
+  <script id="add-project-form" type=text/html>
+    <%= render 'layouts/new_project_form' %>
+  </script>
   
 </body>
 </html>

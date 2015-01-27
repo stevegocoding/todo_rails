@@ -1,0 +1,5 @@
+<%= form_tag do  %>
+  <%= text_field :task, :desc %>
+  <%= date_field :task, :due_date %>
+  <%= text_field :task, :project, readonly: true %>
+<% end %>

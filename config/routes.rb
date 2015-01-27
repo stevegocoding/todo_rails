@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root to: "home#index"
   
-  # get 'signup', to: 'users#new'
   get 'signup',   to: 'users#new'
   get 'signin',   to: 'sessions#new'
   post 'signin',  to: 'sessions#create'
@@ -13,7 +12,15 @@ Rails.application.routes.draw do
   
   get 'dashboard', to: 'dashboard#index', as: 'dashboard'
 
-  resources :users, only: [:create]
+  resources :users, only: [:create] 
+  
+  resources :tasks, only: [:create, :edit, :update] do 
+    collection do
+      get 'filtered', to: 'tasks#filtered', as: 'filtered'
+    end
+  end
+  
+  
   
   
   # The priority is based upon order of creation: first created -> highest priority.

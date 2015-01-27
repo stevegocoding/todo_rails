@@ -7,7 +7,7 @@
             <h3 class="panel-title">Sign up</h3>
           </div>
           <div class="panel-body">
-            <%= form_for @user, html: {id: 'new-user-form'} do |f| %>
+            <%= form_for @user, url: users_path, method: :post, html: {id: 'new-user-form'} do |f| %>
 
               <div class="form-group">
                 <%= f.label :username %>

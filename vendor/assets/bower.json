@@ -4,6 +4,9 @@
     "bootstrap-sass-official": "latest",
     "font-awesome-sass": "git://github.com/FortAwesome/font-awesome-sass",
     "jquery-ui": "latest",
-    "jquery-validation": "git://github.com/jzaefferer/jquery-validation"
+    "jquery-validation": "git://github.com/jzaefferer/jquery-validation",
+    "underscore": "latest",
+    "mustache.js": "latest",
+    "moment": "latest"
   }
 }
